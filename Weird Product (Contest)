@@ -1,0 +1,20 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+     Scanner ob = new Scanner(System.in);
+	 long a = ob.nextInt();
+	 long b = ob.nextInt();
+	 long c = ob.nextInt();
+	 long d = ob.nextInt();
+	 long temp1 = a*c;
+	 long temp2 = a*d;
+	 long temp3 = b*c;
+	 long temp4 = b*d;
+	 long temp = Math.max(temp1,Math.max(temp2,Math.max(temp3,temp4)));
+	 System.out.println(temp);
+	}
+}
