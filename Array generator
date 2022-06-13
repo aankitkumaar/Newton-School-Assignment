@@ -1,0 +1,24 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+    Scanner ob = new Scanner(System.in);
+	int n= ob.nextInt();
+	int arr[] = new int[n];
+	for(int i =0; i<n;i++)
+	{
+     arr[i]=ob.nextInt();
+	}
+	System.out.print("0"+" ");
+	System.out.print(arr[0]+" ");
+	int sum = arr[0];
+	for(int i =1 ; i<n;i++)
+	{
+		 sum+=arr[i];
+		 System.out.print(sum+" ");
+	}
+	}
+}
