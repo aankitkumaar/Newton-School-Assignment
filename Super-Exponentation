@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Main {
+    static long power(long x,long y,long p)
+    {
+        long res=1;
+        x=x%p;
+        while(y>0){
+            if(y%2!=0)
+            {
+                res= (res*x)%p;
+            }
+            y=y/2;
+            x=(x*x)%p;
+        }
+        return res;
+    }
+    public static void main(String[] args) {
+        Scanner ob = new Scanner(System.in);
+        int a=ob.nextInt();
+		for(int i =0; i<a;i++)
+		{
+        int b=ob.nextInt();
+        int c=ob.nextInt();
+        int d=ob.nextInt();
+        int p=1000000007;
+        long temp =power(c,d,p-1);
+        long temp1= power(b,temp,p);
+        System.out.println(temp1);
+		}
+    }
+}
