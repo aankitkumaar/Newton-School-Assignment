@@ -1,0 +1,10 @@
+static int firstTwo(int N){
+    int revnumber=0;
+    int revnumber1=0;
+    while(N>0)
+    {
+        revnumber=revnumber*10+N%10;
+        N=N/10;
+    }
+    return revnumber%100;
+}
