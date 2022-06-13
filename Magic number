@@ -1,0 +1,40 @@
+static int MagicNumber(int N){
+    int i=0;
+while(check(N-i)==true && check(N+i)==true)
+{
+    i++;
+}
+if(check(N-i)==false)
+{
+    return N-i;
+}
+else
+{
+    return N+i;
+}
+}
+
+public static boolean check(int N)
+{
+    boolean seven = false;
+    boolean nine = false;
+    while(N>0)
+    {
+        if(N%10==7)
+        {
+            seven =true;
+        }
+        if(N%10==9)
+        {
+            nine = true;
+        }
+        N=N/10;
+    }
+    if(seven && nine)
+    {
+        return false;
+    }
+    else{
+        return true;
+    }
+}
