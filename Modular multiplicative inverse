@@ -1,0 +1,40 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	static int modInverse(int a, int m)
+    {  
+		int min = m;
+     for (int x = m-1; x>=1; x--){
+            if(((a%m) * (x%m)) % m == 1)
+			{
+				min = Math.min(min,x);
+			}
+         
+    }  
+	 return min;     
+
+} 
+    public static void main(String args[])
+    {
+        Scanner ob = new Scanner(System.in);
+		int tc = ob.nextInt();
+		for(int i=0;i<tc;i++)
+		{
+         int a = ob.nextInt();
+		 int m = ob.nextInt();
+		 int temp = modInverse(a, m);
+		 if(temp ==m)
+		 {
+			 System.out.println("-1");
+		 }
+		 else
+		 {
+			 System.out.println(temp);
+		 }
+		}
+        
+    }
+}
