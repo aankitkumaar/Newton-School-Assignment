@@ -1,0 +1,44 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+	Scanner ob  = new Scanner(System.in);
+    String str = ob.nextLine();
+	//int size = str.length;
+	System.out.println(validpinter(str));
+
+	}
+
+	public static boolean validpinter(String s) {
+        int left = 0, right = s.length() - 1;
+        while (left < right - 1) {
+            if (s.charAt(left) != s.charAt(right)) {
+                if (valid(s, left, right - 1)) {
+                    return true;
+                }
+                if (valid(s, left + 1, right)) {
+                    return true;
+                }
+                return false;
+            }
+            else {
+                left ++;
+                right --;
+            }
+        }
+        return true;
+    }
+    public static boolean valid(String s, int start, int end) {
+        while (start < end) {
+            if (s.charAt(start) != s.charAt(end)) {
+                return false;
+            }
+            start ++;
+            end --;
+        }
+        return true;
+    }
+}
