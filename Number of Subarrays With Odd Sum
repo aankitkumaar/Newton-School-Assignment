@@ -1,0 +1,35 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+class Main {
+	public static void main (String[] args) {
+    Scanner ob = new Scanner(System.in);
+	int n = ob.nextInt();
+	int arr[] = new int[n];
+	for(int i=0;i<n;i++)
+	{
+		arr[i] = ob.nextInt();
+	}
+	System.out.print(oddsum(arr));
+	}
+     public static long oddsum(int[] arr) {
+
+        int c1 = 0, c2 = 1, n = arr.length;
+        long currSum = 0;
+        long ans = 0;
+        for(int i = 0; i < n; i++) {
+            currSum += arr[i];
+            if(currSum % 2 == 0) {
+                ans = (ans + c1);
+                c2++;
+            }
+            else {
+                ans = (ans + c2);
+                c1++;
+            }
+        }
+        return ans;
+    }
+}
